@@ -28,12 +28,12 @@
         tools:ignore="RtlSymmetry" />
 
     <Switch
+        android:id="@+id/desctoggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/notestitle"
         android:layout_alignParentEnd="true"
         android:paddingEnd="100dp"
-        android:id="@+id/desctoggle"
         tools:ignore="RtlSymmetry,UseSwitchCompatOrMaterialXml" />
 
 </RelativeLayout>

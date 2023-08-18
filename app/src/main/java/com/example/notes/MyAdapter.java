@@ -2,6 +2,7 @@ package com.example.notes;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     Context context;
     RealmResults<Note> notesList;
-    boolean descriptionBool = SettingsActivity.isDescriptionBool();
+    private UserSettings settings;
 
     public MyAdapter(Context context, RealmResults<Note> notesList) {
         this.context = context;
@@ -29,21 +30,26 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        if (!descriptionBool)
+        settings = (UserSettings) context;
+        loadSharedPrefs();
+        String descriptionBool = UserSettings.getDescToggle();
+
+        if (descriptionBool.equals("on"))
         {
-            return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view_no_desc, parent, false));
+            return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, parent, false));
         }
         else {
-            return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view, parent, false));
+            return new MyViewHolder(LayoutInflater.from(context).inflate(R.layout.item_view_no_desc, parent, false));
         }
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Note note = notesList.get(position);
+        String descriptionBool = UserSettings.getDescToggle();
         holder.titleOutput.setText(note.getTitle());
 
-        if (descriptionBool)
+        if (descriptionBool.equals("on"))
         {
             holder.descriptionOutput.setText(note.getDescription());
         }
@@ -108,6 +114,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             titleOutput.setSelected(true);
         }
+    }
+
+    private void loadSharedPrefs() {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(UserSettings.PREFERENCES, Context.MODE_PRIVATE);
+        String description = sharedPreferences.getString(UserSettings.DESCRIPTION, UserSettings.ON);
+        settings.setDescToggle(description);
     }
 
 }
