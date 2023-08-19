@@ -1,6 +1,8 @@
 package com.example.notes;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
@@ -59,6 +61,23 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         String formattedTime = DateFormat.getDateTimeInstance().format(note.getCreatedTime());
         holder.timeOutput.setText(formattedTime);
+
+        holder.itemView.setOnClickListener(view -> {
+            AlertDialog.Builder alertBox = new AlertDialog.Builder(view.getRootView().getContext());
+
+            alertBox.setTitle(note.getTitle());
+            alertBox.setMessage(note.getDescription());
+            alertBox.setCancelable(true);
+
+            alertBox.setNegativeButton("Done", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+                }
+            });
+
+            alertBox.show();
+        });
 
         holder.itemView.setOnLongClickListener(view -> {
 
