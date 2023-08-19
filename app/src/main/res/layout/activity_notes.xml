@@ -18,9 +18,10 @@
         android:textStyle = "bold" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerview"
+        android:layout_above="@+id/addnewnotebutton"
         android:layout_below="@+id/notestitle" />
 
     <com.google.android.material.button.MaterialButton
