@@ -28,6 +28,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.notesList = notesList;
     }
 
+    public void setFilteredRealm(RealmResults<Note> filteredRealm){
+        this.notesList = filteredRealm;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)

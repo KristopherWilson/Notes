@@ -6,13 +6,15 @@
     android:background="#03A9F4"
     android:padding="10dp"
     tools:context=".MainActivity">
-    
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/notestitle"
+        android:id="@+id/notestitle2"
         android:text = "@string/main_menu_text"
-        android:textSize="20sp"
+        android:textSize="50sp"
+        android:paddingTop="100dp"
+        android:textAllCaps="true"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:textStyle = "bold" />
@@ -26,12 +28,14 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/notepad"/>
+            android:src="@drawable/notepad"
+            android:backgroundTint="@color/white"/>
         <ImageButton
             android:id="@+id/settingsbutton"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="fitCenter"
+            android:backgroundTint="@color/white"
             android:src="@drawable/settings" />
     </LinearLayout>
 

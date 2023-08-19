@@ -28,9 +28,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/timeoutput"
         android:textSize="12sp"
-        android:gravity="end"
+        android:gravity="center"
         android:textColor="@color/black"
         android:text="@string/item_view_date"
-        android:layout_below="@id/descriptionoutput" />
+        android:layout_below="@id/descriptionoutput"/>
 
 </RelativeLayout>

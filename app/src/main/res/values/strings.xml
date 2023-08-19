@@ -3,7 +3,7 @@
     <string name="item_view_title">My title</string>
     <string name="item_view_date">Jan 21 2020</string>
     <string name="main_activity_title">NOTES</string>
-    <string name="new_note_text">Add new note</string>
+    <string name="new_note_text">+</string>
     <string name="edit_activity_title">Edit Note</string>
     <string name="note_hint_title">Title</string>
     <string name="note_hint_desc">Description</string>
@@ -13,4 +13,5 @@
     <string name="settings_header">SETTINGS</string>
     <string name="description_toggle_text">Description Toggle</string>
     <string name="item_view_desc">My long description</string>
+    <string name="search_hint">search</string>
 </resources>

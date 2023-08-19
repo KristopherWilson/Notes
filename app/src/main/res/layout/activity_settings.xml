@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/notestitle"
         android:text = "@string/settings_header"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:textStyle = "bold"
@@ -21,10 +21,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/notestitle"
+        android:layout_alignParentStart="true"
+        android:paddingStart="10dp"
         android:text="@string/description_toggle_text"
         android:textColor="@color/white"
-        android:layout_below="@+id/notestitle"
-        android:paddingStart="50dp"
+        android:textSize="20sp"
         tools:ignore="RtlSymmetry" />
 
     <Switch
@@ -33,7 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/notestitle"
         android:layout_alignParentEnd="true"
-        android:paddingEnd="100dp"
+        android:paddingEnd="10dp"
         tools:ignore="RtlSymmetry,UseSwitchCompatOrMaterialXml" />
+
 
 </RelativeLayout>

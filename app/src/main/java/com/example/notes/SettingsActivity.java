@@ -2,6 +2,7 @@ package com.example.notes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Switch;
@@ -16,17 +17,11 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
         settings = (UserSettings) getApplication();
 
-        Switch descToggle = (Switch) findViewById(R.id.desctoggle);
+        @SuppressLint("UseSwitchCompatOrMaterialCode") Switch descToggle = (Switch) findViewById(R.id.desctoggle);
         loadSharedPrefs();
         String desc = UserSettings.getDescToggle();
 
-        if (desc.equals("on"))
-        {
-            descToggle.setChecked(true);
-        }
-        else {
-            descToggle.setChecked(false);
-        }
+        descToggle.setChecked(desc.equals("on"));
 
         descToggle.setOnClickListener(view -> {
             if (desc.equals("on")) {

@@ -4,33 +4,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#03A9F4"
-    android:padding="10dp"
+    android:paddingTop="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="5dp"
     tools:context=".NotesActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/notestitle"
-        android:text = "@string/main_activity_title"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:textStyle = "bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/addnewnotebutton"
-        android:layout_below="@+id/notestitle" />
+        android:layout_below="@+id/searchView"/>
 
-    <com.google.android.material.button.MaterialButton
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:id="@+id/addnewnotebutton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/black"
-        android:text="@string/new_note_text"
-        android:textColor="#03A9F4" />
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/add_button_icon"
+        android:scaleType="center"
+        android:background="@drawable/add_button_bg"
+        android:layout_marginBottom="20dp"/>
+    
+    <SearchView
+        android:layout_width="250dp"
+        android:layout_height="25dp"
+        android:id="@+id/searchView"
+        android:layout_marginBottom="5dp"
+        android:queryHint="Search"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/search_view_bg"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"/>
 
 </RelativeLayout>
