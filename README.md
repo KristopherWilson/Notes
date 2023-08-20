@@ -15,3 +15,7 @@ On this screen, you can sift through all your notes, use the button at the botto
 #Edit, Delete  
 To edit or delete a note, longpress on the note you wish to edit or delete.  
 A PopupMenu will appear with the options you have available.
+
+#Search
+The search bar searches for words in the title and in the description.  
+The search bar IS CASE SENESITIVE  
