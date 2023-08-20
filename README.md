@@ -10,7 +10,8 @@ The button on the right takes you to the settings.
 Currently, the only setting is to turn on or off the visibility of descriptions on the notes selection screen.
 
 #Notes screen  
-On this screen, you can sift through all your notes, use the button at the bottom to add a new note, edit notes, and delete notes.
+On this screen, you can sift through all your notes, use the button at the bottom to add a new note, edit notes, and delete notes.  
+Tap on a note to view the note in-full  
 
 #Edit, Delete  
 To edit or delete a note, longpress on the note you wish to edit or delete.  
